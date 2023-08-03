@@ -1,4 +1,4 @@
-package jawsbar.com.car;
+package jawsbar.com.Controller.car;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jawsbar.com.Entity.Car;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@JsonIgnoreProperties
+//@JsonIgnoreProperties
 public class CarController {
 
     @Autowired
@@ -20,8 +20,14 @@ public class CarController {
         return carRepo.findAll();
     }
 
+    @GetMapping("/qwer")
+    public String qwer() {
+        return "tlqkf!";
+    }
+
     @GetMapping("/api/hello")
     public String test() {
         return "tlqkf!";
     }
+
 }

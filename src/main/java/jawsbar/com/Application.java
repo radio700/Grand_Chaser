@@ -41,10 +41,10 @@ public class Application implements CommandLineRunner {
 		ownerRepo.saveAll(Arrays.asList(owner1, owner2));
 
 		// Add car object and link to owners and save these to db
-		Car car1 = new Car("Ford", "Mustang", "Red", "ADF-1121", 2021, 59000, owner1);
-		Car car2 = new Car("Nissan", "Leaf", "White", "SSJ-3002", 2019, 29000, owner2);
-		Car car3 = new Car("Toyota", "Prius", "Silver", "KKO-0212", 2020, 39000, owner2);
-		carRepo.saveAll(Arrays.asList(car1, car2, car3));
+//		Car car1 = new Car("Ford", "Mustang", "Red", "ADF-1121", 2021, 59000, owner1);
+//		Car car2 = new Car("Nissan", "Leaf", "White", "SSJ-3002", 2019, 29000, owner2);
+//		Car car3 = new Car("Toyota", "Prius", "Silver", "KKO-0212", 2020, 39000, owner2);
+//		carRepo.saveAll(Arrays.asList(car1, car2, car3));
 
 		for (Car car : carRepo.findAll()) {
 			logger.info(car.getBrand() + " " + car.getModel());

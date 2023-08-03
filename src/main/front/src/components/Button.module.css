@@ -1,0 +1,9 @@
+/* .module.css 를 뒤에 꼭 붙일 것 */
+.primary{
+    background-color: #002144;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-weight: bold;
+    
+}
