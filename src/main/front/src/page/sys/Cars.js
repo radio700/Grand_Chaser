@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { SERVER_URL } from "../../constants";
 import { DataGrid } from "@mui/x-data-grid";
+import { Snackbar } from "@mui/material";
 
 function Cars(){
 
@@ -9,6 +10,7 @@ function Cars(){
   */
 
   const [Cars,setCars] = useState([]);
+  const [open,setOpen] = useState(false);
 
   let url = `${SERVER_URL}api/cars`;
 
@@ -30,6 +32,7 @@ function Cars(){
       fetch(url, {method: "DELETE"})
       .then(response => fncallback())
       .catch((err) => console.error(err));
+      setOpen(true);
     }
 
   }
@@ -48,6 +51,10 @@ function Cars(){
     {field: 'color', headerName: 'color',  width: 200},
     {field: 'year', headerName: 'year',  width: 200},
     {field: 'price', headerName: 'price',  width: 200},
+    {
+      field:"_links.self.href", headerName:"",
+      renderCell: (row) => <button onClick={() => onDelClick(row.id)}>Delete</button>
+    }
   ]
 
   /*
@@ -62,6 +69,14 @@ function Cars(){
         >
 
         </DataGrid>
+
+        <Snackbar
+          open={open}
+          autoHideDuration={2000}
+          onClose={() => setOpen(false)}
+          message="Car is Deleted"
+        />
+
       </div>
       // <div>
       //   <table>
