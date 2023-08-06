@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SERVER_URL } from "../../constants";
-// import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 
 function Cars(){
 
@@ -54,40 +54,40 @@ function Cars(){
   * HTML {javascript}
   */
     return(
-      // <div style={{height:500, width:'100%'}}>
-      //   <DataGrid
-      //     rows={Cars}
-      //     columns={columns}
-      //     getRowId={row => row._links.self.href}
-      //   >
+      <div style={{height:500, width:'100%'}}>
+        <DataGrid
+          rows={Cars}
+          columns={columns}
+          getRowId={row => row._links.self.href}
+        >
 
-      //   </DataGrid>
-      // </div>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <td><p>e</p></td>
-              <td><p>f</p></td>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              Cars.map((car,id) => 
-                <tr key={id}>
-                  <td>{car.brand}</td>
-                  <td>{car.model}</td>
-                  <td>{car.color}</td>
-                  <td>{car.year}</td>
-                  <td>{car.price}</td>
-                  <td>{car.id}</td>
-                  <button onClick={() => onDelClick(car.id)}>delete</button>
-                </tr>
-              )
-            }
-          </tbody>
-        </table>
+        </DataGrid>
       </div>
+      // <div>
+      //   <table>
+      //     <thead>
+      //       <tr>
+      //         <td><p>e</p></td>
+      //         <td><p>f</p></td>
+      //       </tr>
+      //     </thead>
+      //     <tbody>
+      //       {
+      //         Cars.map((car,id) => 
+      //           <tr key={id}>
+      //             <td>{car.brand}</td>
+      //             <td>{car.model}</td>
+      //             <td>{car.color}</td>
+      //             <td>{car.year}</td>
+      //             <td>{car.price}</td>
+      //             <td>{car.id}</td>
+      //             <button onClick={() => onDelClick(car.id)}>delete</button>
+      //           </tr>
+      //         )
+      //       }
+      //     </tbody>
+      //   </table>
+      // </div>
     )
 }
 
