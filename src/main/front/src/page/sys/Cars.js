@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { SERVER_URL } from "../../constants";
 
 function Cars(){
 
@@ -9,14 +9,14 @@ function Cars(){
 
   const [Cars,setCars] = useState([]);
 
-  let url = "http://localhost:8080/api/cars"
+  let url = `${SERVER_URL}api/cars`;
 
   useEffect(() =>{
   fetch(url)
       .then(response => response.json())
       .then(json =>{
           setCars(json);
-          //console.log(json);
+          console.log(json);
           //setMovies(json.data.movies);
   })
   },[])//[]안에 있는 useState는 수가 바뀔 때 마다 재 랜더링됨
@@ -32,12 +32,21 @@ function Cars(){
     return(
       <div>
         <table>
+          <thead>
+            <tr>
+              <td><p>e</p></td>
+              <td><p>f</p></td>
+            </tr>
+          </thead>
           <tbody>
             {
               Cars.map((car,id) => 
                 <tr key={id}>
-                  <td>{car.color}</td>
+                  <td>{car.brand}</td>
                   <td>{car.model}</td>
+                  <td>{car.color}</td>
+                  <td>{car.year}</td>
+                  <td>{car.price}</td>
                 </tr>
               )
             }
