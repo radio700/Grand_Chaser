@@ -4,7 +4,7 @@ import jawsbar.com.Repository.CarRepo;
 import jawsbar.com.Repository.OwnerRepo;
 import org.springframework.boot.SpringApplication;
 
-import jawsbar.com.Entity.Car;
+//import jawsbar.com.Entity.Car;
 import jawsbar.com.Entity.Owner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -46,9 +46,9 @@ public class Application implements CommandLineRunner {
 //		Car car3 = new Car("Toyota", "Prius", "Silver", "KKO-0212", 2020, 39000, owner2);
 //		carRepo.saveAll(Arrays.asList(car1, car2, car3));
 
-		for (Car car : carRepo.findAll()) {
-			logger.info(car.getBrand() + " " + car.getModel());
-		}
+//		for (Car car : carRepo.findAll()) {
+//			logger.info(car.getBrand() + " " + car.getModel());
+//		}
 	}
 
 }
