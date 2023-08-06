@@ -15,14 +15,9 @@ public class CarController {
     @Autowired
     private CarRepo carRepo;
 
-    @RequestMapping("/cars")
+    @RequestMapping("/api/cars")
     public Iterable<Car> getCars(){
         return carRepo.findAll();
-    }
-
-    @GetMapping("/qwer")
-    public String qwer() {
-        return "tlqkf!";
     }
 
     @GetMapping("/api/hello")

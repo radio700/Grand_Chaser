@@ -8,6 +8,7 @@ import Promise from "../page/sys/Promise";
 import Detail from "../page/sys/Detail";
 import Weather from "../page/sys/WeatherApi";
 import Github from "../page/sys/Github";
+import Cars from "../page/sys/Cars";
 
 function Router(){
 
@@ -37,14 +38,15 @@ function Router(){
             height:"30px",
             border:"1px solid"
           }}>
-              <Link to="/">home | </Link>
-              <Link to="/Movie">Movie |</Link>
-              <Link to="/FormExample2">FormExample2 |</Link>
-              <Link to="/Array">배열(Map) |</Link>
-              <Link to="/Promise">Promise |</Link>
-              <Link to="/Weather">Weather |</Link>
-              <Link to="/Github">Github |</Link>
-              
+            <Link to="/">home | </Link>
+            <Link to="/Movie">Movie |</Link>
+            <Link to="/FormExample2">FormExample2 |</Link>
+            <Link to="/Array">배열(Map) |</Link>
+            <Link to="/Promise">Promise |</Link>
+            <Link to="/Weather">Weather |</Link>
+            <Link to="/Github">Github |</Link>
+            <Link to="/api/cars">Cars |</Link>
+
           </nav>
           <Routes>
               <Route path="/" element={<Home/>}></Route>
@@ -55,6 +57,7 @@ function Router(){
               <Route path ="/movie/:id" element={<Detail/>} ></Route>
               <Route path="/Weather" element={<Weather/>}></Route>
               <Route path="/Github" element={<Github/>}></Route>
+              <Route path="/api/cars" element={<Cars/>}></Route>
           </Routes>
         </BrowserRouter>
       </div>

@@ -1,21 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import { useEffect } from "react";
+import Login from "./page/Login";
 
-function App() {
-    const [hello, setHello] = useState('')
+function App(){
 
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-        console.log(hello)
-    }, []);
+    /*
+    * use state and Effect
+    */
 
-    return (
-        <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
-        </div>
-    );
+    useEffect(() =>{
+    
+    },[])
+
+    /*
+    * User Function
+    */
+
+
+
+    /*
+    * HTML {javascript}
+    */
+    return(
+        <Login></Login>
+    )
 }
 
 export default App;
