@@ -10,17 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 //@JsonIgnoreProperties
+//@RequestMapping(value = "/api")
 public class CarController {
 
     @Autowired
     private CarRepo carRepo;
 
-    @RequestMapping("/api/cars")
+    @RequestMapping("/cars")
     public Iterable<Car> getCars(){
         return carRepo.findAll();
     }
 
-    @GetMapping("/api/hello")
+    @GetMapping("/hello")
     public String test() {
         return "tlqkf!";
     }

@@ -15,8 +15,8 @@ function Cars(){
   fetch(url)
       .then(response => response.json())
       .then(json =>{
-          setCars(json);
-          console.log(json);
+          setCars(json._embedded.cars);
+          console.log(json._embedded.cars);
           //setMovies(json.data.movies);
   })
   },[])//[]안에 있는 useState는 수가 바뀔 때 마다 재 랜더링됨
@@ -47,6 +47,7 @@ function Cars(){
                   <td>{car.color}</td>
                   <td>{car.year}</td>
                   <td>{car.price}</td>
+                  <button >asdf</button>
                 </tr>
               )
             }
